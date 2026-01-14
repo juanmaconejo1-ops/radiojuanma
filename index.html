@@ -3,30 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS Audio Player para YouTube</title>
+    <title>Streamer App - Google Sheets</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="player-container">
-        <h2>Mi Reproductor JS</h2>
+        <h2>Mi Biblioteca</h2>
         
-        <div class="input-group">
-            <input type="text" id="youtubeUrl" placeholder="Pega el enlace de YouTube aquí...">
-            <button id="loadBtn">Cargar</button>
+        <div id="audio-selector" class="audio-selector">
+            <p>Cargando lista de reproducción...</p>
         </div>
 
-        <div class="video-wrapper">
-            <div id="player"></div> <div class="cover-overlay">
+        <div class="video-wrapper" id="visualizer">
+            <div id="player"></div>
+            <div class="cover-overlay">
                 <div class="music-icon">🎵</div>
-                <p id="videoTitle">Carga una canción para empezar</p>
+                <p id="videoTitle">Selecciona una pista</p>
             </div>
         </div>
 
         <div class="controls">
-            <button id="playBtn">▶ Play</button>
-            <button id="pauseBtn">⏸ Pausa</button>
+            <button id="playBtn" title="Reproducir">▶</button>
+            <button id="pauseBtn" title="Pausa">⏸</button>
             <div class="volume-control">
-                <span>Vol:</span>
+                <span>VOL</span>
                 <input type="range" id="volumeSlider" min="0" max="100" value="50">
             </div>
         </div>
