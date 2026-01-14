@@ -1,7 +1,11 @@
+/* Importamos una fuente más moderna y legible */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
 body {
-    background-color: #121212;
-    color: white;
-    font-family: 'Segoe UI', sans-serif;
+    /* Gradiente vibrante de fondo */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,30 +14,74 @@ body {
 }
 
 .player-container {
-    background: #1e1e1e;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px); /* Efecto cristal */
+    padding: 2.5rem;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
     text-align: center;
-    width: 350px;
+    width: 400px;
 }
 
+h2 {
+    font-weight: 800;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Estilo del input y botón de carga */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#youtubeUrl {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+}
+
+#loadBtn {
+    background: #ffde59; /* Amarillo brillante para contraste */
+    color: #333;
+    border: none;
+    padding: 0 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#loadBtn:hover { transform: scale(1.05); }
+
+/* El círculo del reproductor */
 .video-wrapper {
     position: relative;
-    width: 200px;
-    height: 200px;
-    margin: 20px auto;
+    width: 220px;
+    height: 220px;
+    margin: 25px auto;
+    border-radius: 50%;
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
     overflow: hidden;
-    border-radius: 50%; /* Lo hacemos circular */
-    border: 5px solid #1db954;
 }
 
-/* Tapamos el video con un overlay */
 .cover-overlay {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: #282828;
+    background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,21 +89,51 @@ body {
     z-index: 10;
 }
 
-#player {
-    position: absolute;
-    top: -50px; /* Sacamos el video de la vista */
-    pointer-events: none;
+.music-icon { font-size: 4rem; margin-bottom: 10px; }
+
+#videoTitle {
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0 15px;
+    line-height: 1.2;
+}
+
+/* Botones de control más grandes y claros */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .controls button {
-    background: #1db954;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
+    background: #00d2ff; /* Cyan vibrante */
     color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.2rem;
     cursor: pointer;
-    margin: 5px;
-    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
 }
 
-.volume-control { margin-top: 15px; }
+.controls button:hover {
+    background: #3a7bd5;
+    transform: translateY(-3px);
+}
+
+/* Slider de volumen con más contraste */
+.volume-control {
+    margin-top: 25px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    border-radius: 15px;
+}
+
+#volumeSlider {
+    width: 80%;
+    cursor: pointer;
+    accent-color: #ffde59;
+}
